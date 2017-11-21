@@ -10,12 +10,14 @@ class BookItem extends Component {
       <Card>
         <Card.Content>
           <Card.Header onClick={this.handleClick}>
-            {this.props.book.title}
+            {this.props.book.volumeInfo.title}
           </Card.Header>
+          {/*
           <Card.Meta>
             <span className="date">{this.props.book.publishedDate}</span>
           </Card.Meta>
           <Card.Description>{this.props.book.description}</Card.Description>
+        */}
         </Card.Content>
       </Card>
     );

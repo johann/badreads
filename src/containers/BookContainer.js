@@ -14,7 +14,10 @@ class BookContainer extends Component {
       <div>
         <Grid>
           <Grid.Column width={4}>
-            <BookList books={this.props.books} onSelect={this.props.onSelect} />
+            <BookList
+              books={this.props.fetchedBooks}
+              onSelect={this.props.onSelect}
+            />
           </Grid.Column>
           <Grid.Column width={9}>
             <BookShow
@@ -32,7 +35,8 @@ function mapStateToProps(state) {
   console.log("BookContainer", state);
   return {
     books: state.books.list,
-    selectedBook: state.books.selectedBook
+    selectedBook: state.books.selectedBook,
+    fetchedBooks: state.books.fetchedBooks
   };
 }
 

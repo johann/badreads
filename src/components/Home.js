@@ -8,7 +8,7 @@ const Home = props => {
       <Grid>
         <Grid.Column width={2} />
         <Grid.Column width={4}>
-          <Cart books={props.books} />
+          <Cart />
         </Grid.Column>
       </Grid>
     </div>

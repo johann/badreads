@@ -3,7 +3,6 @@ import { Card, Icon, Image } from "semantic-ui-react";
 
 class BookItem extends Component {
   handleClick = () => {
-    console.log("Clicking");
     this.props.onSelect(this.props.book);
   };
   render() {

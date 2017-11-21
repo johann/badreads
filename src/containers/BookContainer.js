@@ -7,7 +7,6 @@ import { connect } from "react-redux";
 import { addToCart, selectBook } from "../actions/books";
 class BookContainer extends Component {
   render() {
-    console.log("BookContainer", this.props);
     return (
       <div>
         <Grid>
@@ -17,7 +16,7 @@ class BookContainer extends Component {
           <Grid.Column width={9}>
             <BookShow
               book={this.props.selectedBook}
-              onAddCart={this.props.onAddCart}
+              onAddCart={this.props.onAdd}
             />
           </Grid.Column>
         </Grid>
@@ -27,10 +26,10 @@ class BookContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
+  console.log("BookContainer", state);
   return {
-    books: state.books,
-    selectedBook: state.selectedBook
+    books: state.books.list,
+    selectedBook: state.books.selectedBook
   };
 }
 

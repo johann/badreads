@@ -1,7 +1,7 @@
 import data from "../data";
 export default function bookReducer(
   state = {
-    books: [
+    list: [
       {
         title: "Mirage",
         authors: ["Clive Cussler", "Jack B. Du Brul"],
@@ -27,7 +27,6 @@ export default function bookReducer(
           "For Mendoza, being hired out as a mercenary hitman brought him money and built him an empire. His new job: bring down a rival in the Amazon. Then he met her. Ava survived a crash-landing in the jungle. Her rescuer was hot, sexy and dangerous. But now someone wants her dead, and Mendoza seems to be her only chance at survival - but is he truly her saviour, or someone with far deadlier intentions?"
       }
     ],
-    booksInCart: [],
     selectedBook: {}
   },
   action
@@ -35,10 +34,6 @@ export default function bookReducer(
   switch (action.type) {
     case "SELECT_BOOK":
       return Object.assign({}, state, { selectedBook: action.payload });
-    case "ADD_TO_CART":
-      return Object.assign({}, state, {
-        booksInCart: [...state.booksInCart, action.payload]
-      });
     default:
       return state;
   }

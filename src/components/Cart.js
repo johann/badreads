@@ -26,7 +26,7 @@ class Cart extends Component {
 
 function mapStateToProps(state) {
   return {
-    books: state.booksInCart
+    books: state.cart.booksInCart
   };
 }
 

@@ -11,10 +11,3 @@ export function selectBook(book) {
     payload: book
   };
 }
-
-export function newAction(actionType, book) {
-  return {
-    type: actionType,
-    payload: book
-  };
-}

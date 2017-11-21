@@ -9,13 +9,11 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import bookReducer from "./reducers/books";
 import cartReducer from "./reducers/cart";
+import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({ books: bookReducer, cart: cartReducer });
 console.log(rootReducer);
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

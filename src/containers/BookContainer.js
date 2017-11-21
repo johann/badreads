@@ -4,8 +4,11 @@ import BookShow from "../components/BookShow";
 import { Grid } from "semantic-ui-react";
 import data from "../data";
 import { connect } from "react-redux";
-import { addToCart, selectBook } from "../actions/books";
+import { addToCart, selectBook, fetchBooks } from "../actions/books";
 class BookContainer extends Component {
+  componentDidMount() {
+    this.props.fetchBooks();
+  }
   render() {
     return (
       <div>
@@ -40,6 +43,9 @@ function mapDispatchToProps(dispatch) {
     },
     onAdd: book => {
       dispatch(addToCart(book));
+    },
+    fetchBooks: () => {
+      dispatch(fetchBooks());
     }
   };
 }
